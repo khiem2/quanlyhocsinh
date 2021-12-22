@@ -1,0 +1,58 @@
+﻿@model IEE.Lib.Models.AspNetGroupUser
+
+@{
+    ViewBag.Title = "Chi tiết nhóm người dùng: '" + Model.Name + "'";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box">
+    <div class="box-header row">
+
+        <h3 class="box-title col-md-7">@ViewBag.Title</h3>
+        <div>
+            <!-- Date and time range -->
+            <div class="col-md-5">
+                <div class="form-group">
+                    @*<button class="btn btn-primary pull-right "><i class="fa fa-plus"></i> Thêm mới</button>*@
+                    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary pull-right " })
+                </div>
+
+            </div><!-- /.form group -->
+        </div>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Code)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descriptions)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descriptions)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+
+            <dd>
+                @Model.IsActive
+            </dd>
+
+        </dl>
+    </div>
+</div>

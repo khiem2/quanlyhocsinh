@@ -1,0 +1,37 @@
+﻿@model IEE.Lib.Models.AspNetRole
+
+@{
+    ViewBag.Title = "Chi tiết quyền: " + Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box">
+    <div class="box-header row">
+        <h3 class="box-title col-md-7">@ViewBag.Title</h3>
+
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        <dl class="dl-horizontal">
+            <dt>
+               <span>Mô tả</span>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                <span>Kích hoạt</span>
+            </dt>
+
+            <dd>
+                @Model.IsActive
+            </dd>
+
+        </dl>
+    </div>
+    <div class="box-footer">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
